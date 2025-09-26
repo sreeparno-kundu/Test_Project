@@ -1,0 +1,31 @@
+﻿@model Test_Project.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+<link rel="stylesheet" href="~/CSS/style.css" />
+
+<main aria-labelledby="title">
+    <h2>Login</h2>
+    <div class="detailbox">
+        <form id="loginForm">
+            <div>
+                @Html.LabelFor(m => m.UserId)
+                @Html.TextBoxFor(m => m.UserId, new { @class = "form-control", id = "UserId" })
+                <span id="userError" class="text-danger"></span>
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "Password" })
+                <span id="passError" class="text-danger"></span>
+            </div>
+
+            <br />
+            <button type="submit" class="btn btn-primary">Login</button>
+            <br />
+            <p id="loginMessage" style="text-align:center;margin:10px"></p>
+        </form>
+    </div>
+    <script src="~/Scripts/loginscript.js"></script>
+</main>
+

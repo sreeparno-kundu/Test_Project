@@ -1,0 +1,32 @@
+﻿@model Test_Project.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+<link rel="stylesheet" href="~/style.css" />
+<main aria-labelledby="title">
+    <h2>Login</h2>
+    <div class="detailbox">
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+
+            <div>
+                @Html.LabelFor(m => m.UserId)
+                @Html.TextBoxFor(m => m.UserId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserId)
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+            <br />
+
+            <input type="submit" value="Login" class="btn btn-primary" />
+            <br />
+
+            <p style="color:aqua;text-align:center;margin:10px"><b>@ViewBag.Message</b></p>
+        }
+    </div>
+</main>

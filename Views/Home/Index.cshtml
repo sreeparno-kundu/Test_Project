@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link rel="stylesheet" href="~/CSS/indexstyle.css" />
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title" class="heading fw-bolder" style="font-size: 72px;"><b>ASP School</b></h1>
+        <h2>Welcome,  @Session["UserId"]  !</h2>   
+        <p><a href="/Home/StudentList" class="btn btn-primary">View Students Table</a></p>
+    </section>
+</main>
